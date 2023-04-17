@@ -3,14 +3,15 @@ Serializers for the User API View
 """
 from django.contrib.auth import (
     get_user_model,
-    authenticate
+    authenticate,
 )
 
 from django.utils.translation import gettext as _
+
 from rest_framework import serializers
 
 
-class UsersSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     """Serializer for the user object"""
 
     class Meta:
@@ -45,4 +46,4 @@ class AuthTokenSerializer(serializers.Serializer):
             raise serializers.ValidationError(msg, code='authorization')
 
         attrs['user'] = user
-        return user
+        return attrs

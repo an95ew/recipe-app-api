@@ -6,14 +6,14 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
 
 from user.serializers import (
-    UsersSerializer,
+    UserSerializer,
     AuthTokenSerializer,
 )
 
 
 class CreateUserView(generics.CreateAPIView):
     """Create a new use in the system"""
-    serializer_class = UsersSerializer
+    serializer_class = UserSerializer
 
 
 class CreateTokenView(ObtainAuthToken):
